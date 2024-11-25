@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-  cout << " ***** BANK ACCOUNT MANAGEMENT SYSTEM ***** " << endl;
+  cout << " Bank Account Management System " << endl;
   //  declaring variables
   //  creating an account variable with initial balance of 1000
   double account = 1000;
@@ -11,8 +11,8 @@ int main() {
   bool account_created = false;
   // creating and initializing a passcode with 1234
   int passcode = 1234;
-  // using a while loop to keep the program running until the user decides to
-  // exit the program by selecting option 4.
+  // using while loop to keep running the program untill user selects option 5
+  // and exits
   while (true) {
     // The user is presented with a menu to select an option
     cout << "Select an option below to proceed" << endl;
@@ -50,7 +50,7 @@ int main() {
      condition of the amount entered.
      */
     else if (option == 2) {
-      cout << "Enter the amount of money you want to deposit: ";
+      cout << "Enter the amount you want to deposit : ";
       cin >> deposit;
       if (deposit > 0) {
         account += deposit;
@@ -78,8 +78,9 @@ int main() {
         cout << "Invalid passcode, try again" << endl;
         cin >> pass;
       }
-      cout << "Passcode accepted" << endl;
-      cout << "Enter the amount of money you want to withdraw: ";
+      cout << "Password accepted" << endl;
+      cout << "Enter the amount of money you want to withdraw from your "
+              "account: ";
       cin >> withdraw;
       if (withdraw > account || withdraw < 0) {
         cout << "Insufficient funds or invalid input" << endl;
@@ -90,7 +91,7 @@ int main() {
       }
     }
     /*
-     If option 4 is selected, the user is prompted to enter their passcode to
+     If option 4 is selected, the user needs to enter their passcode to
      check their account balance. If the passcode entered is incorrect, the
      program will prompt the user to enter the correct passcode. When the
      correct passcode is entered, the program will display the account balance.
@@ -103,18 +104,16 @@ int main() {
         cout << "Invalid passcode, try again" << endl;
         cin >> pass;
       }
-      cout << "Your account balance is " << account << endl;
+      cout << "Your current account balance is " << account << endl;
     }
     /*
-    If option 5 is selected, the program will display a thank you message and
-    break out of the while loop, ending the program.
+    If option 5 is selected . the program will exit
     */
     else if (option == 5) {
       cout << "Thank you for using our service" << endl;
       break;
     }
-    /* If the user enters an invalid option, the program will display an error
-     * message and prompt the user to try again.
+    /* In case of invalid inputs error is shown.
      */
     else {
       cout << "Invalid option. Please try again" << endl;
@@ -122,3 +121,4 @@ int main() {
   }
   return 0;
 }
+
