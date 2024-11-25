@@ -2,155 +2,162 @@
 using namespace std;
 
 int main() {
-  // Define the books and their copies and borrowed status
-  string book_one = "The Catcher in the Rye";
-  string book_two = "1984";
-  string book_three = "To Kill a Mockingbird";
-  string book_four = "The Great Gatsby";
-  string book_five = "The Lord of the Rings";
+  // declaring and initializing variables with book names and copies
+  string book_1 = "100 Go Mistakes and How to Avoid Them";
+  string book_2 = "The Linux Programming Interface";
+  string book_3 = "C++ Primer";
+  string book_4 = "Js is for Dummies";
+  string book_5 = "I use vim btw";
 
-  int copies1 = 3, copies2 = 2, copies3 = 1, copies4 = 0, copies5 = 5;
-  bool borrowed1 = false, borrowed2 = false, borrowed3 = false,
-       borrowed4 = false, borrowed5 = false;
-  // while is going to run until the user chooses to exit
+  int copies_1 = 6;
+  int copies_2 = 9;
+  int copies_3 = 7;
+  int copies_4 = 0;
+  int copies_5 = 3;
+
+  // initializing borrowed status for each book
+  bool borrowed_1 = false, borrowed_2 = false, borrowed_3 = false,
+       borrowed_4 = false, borrowed_5 = false;
+
+  // while loop to keep the program running until the user exits
   while (true) {
-    // Display the menu
-    cout << "Welcome to the Library!" << endl;
+    // displaying the main menu
+    cout << endl << "Welcome to Library!" << endl;
+    cout << "Please select an option to proceed:" << endl;
     cout << "1. Borrow a book" << endl;
     cout << "2. Return a book" << endl;
     cout << "3. Exit" << endl;
-    // Ask the user for their choice
-    cout << "Enter your choice: ";
-    int choice;
-    cin >> choice;
-    // Check the user's choice
-    if (choice == 1) {
-      cout << "Which book would you like to borrow?" << endl;
-      cout << "1. " << book_one << " (" << copies1 << " copies available)"
+
+    int option;
+    cin >> option;
+
+    if (option == 1) { // Borrow a book
+      cout << "Please select a book to borrow using (1-5):" << endl;
+      cout << "1. " << book_1 << " (" << copies_1 << " copies available)"
            << endl;
-      cout << "2. " << book_two << " (" << copies2 << " copies available)"
+      cout << "2. " << book_2 << " (" << copies_2 << " copies available)"
            << endl;
-      cout << "3. " << book_three << " (" << copies3 << " copies available)"
+      cout << "3. " << book_3 << " (" << copies_3 << " copies available)"
            << endl;
-      cout << "4. " << book_four << " (" << copies4 << " copies available)"
+      cout << "4. " << book_4 << " (" << copies_4 << " copies available)"
            << endl;
-      cout << "5. " << book_five << " (" << copies5 << " copies available)"
+      cout << "5. " << book_5 << " (" << copies_5 << " copies available)"
            << endl;
-      cout << "Enter your choice: ";
-      int book_choice;
-      cin >> book_choice;
-      // Check the user's choice and update the copies and borrowed status
-      // accordingly. If the user tries to borrow a book that is already
-      // borrowed, display an error message. If the user tries to borrow a book
-      // that has no copies available, display an error message.
-      if (book_choice == 1) {
-        if (borrowed1) {
-          cout << "You have already borrowed this book!" << endl;
-        } else if (copies1 > 0) {
-          cout << "You have successfully borrowed " << book_one << endl;
-          copies1--;
-          borrowed1 = true;
+
+      int book;
+      cin >> book;
+      // checking if the book is available and if the user has already borrowed
+      // it or not and updating the copies and borrowed status accordingly
+      if (book == 1) {
+        if (borrowed_1) {
+          cout << "Sorry, you have already borrowed this book." << endl;
+        } else if (copies_1 == 0) {
+          cout << "Sorry, this book is out of stock." << endl;
         } else {
-          cout << "Sorry, no copies available!" << endl;
+          borrowed_1 = true;
+          copies_1--;
+          cout << "You have successfully borrowed \"" << book_1 << "\"."
+               << endl;
         }
-      } else if (book_choice == 2) {
-        if (borrowed2) {
-          cout << "You have already borrowed this book!" << endl;
-        } else if (copies2 > 0) {
-          cout << "You have successfully borrowed " << book_two << endl;
-          copies2--;
-          borrowed2 = true;
+      } else if (book == 2) {
+        if (borrowed_2) {
+          cout << "Sorry, you have already borrowed this book." << endl;
+        } else if (copies_2 == 0) {
+          cout << "Sorry, this book is out of stock." << endl;
         } else {
-          cout << "Sorry, no copies available!" << endl;
+          borrowed_2 = true;
+          copies_2--;
+          cout << "You have successfully borrowed \"" << book_2 << "\"."
+               << endl;
         }
-      } else if (book_choice == 3) {
-        if (borrowed3) {
-          cout << "You have already borrowed this book!" << endl;
-        } else if (copies3 > 0) {
-          cout << "You have successfully borrowed " << book_three << endl;
-          copies3--;
-          borrowed3 = true;
+      } else if (book == 3) {
+        if (borrowed_3) {
+          cout << "Sorry, you have already borrowed this book." << endl;
+        } else if (copies_3 == 0) {
+          cout << "Sorry, this book is out of stock." << endl;
         } else {
-          cout << "Sorry, no copies available!" << endl;
+          borrowed_3 = true;
+          copies_3--;
+          cout << "You have successfully borrowed \"" << book_3 << "\"."
+               << endl;
         }
-      } else if (book_choice == 4) {
-        if (borrowed4) {
-          cout << "You have already borrowed this book!" << endl;
-        } else if (copies4 > 0) {
-          cout << "You have successfully borrowed " << book_four << endl;
-          copies4--;
-          borrowed4 = true;
+      } else if (book == 4) {
+        if (borrowed_4) {
+          cout << "Sorry, you have already borrowed this book." << endl;
+        } else if (copies_4 == 0) {
+          cout << "Sorry, this book is out of stock." << endl;
         } else {
-          cout << "Sorry, no copies available!" << endl;
+          borrowed_4 = true;
+          copies_4--;
+          cout << "You have successfully borrowed \"" << book_4 << "\"."
+               << endl;
         }
-      } else if (book_choice == 5) {
-        if (borrowed5) {
-          cout << "You have already borrowed this book!" << endl;
-        } else if (copies5 > 0) {
-          cout << "You have successfully borrowed " << book_five << endl;
-          copies5--;
-          borrowed5 = true;
+      } else if (book == 5) {
+        if (borrowed_5) {
+          cout << "Sorry, you have already borrowed this book." << endl;
+        } else if (copies_5 == 0) {
+          cout << "Sorry, this book is out of stock." << endl;
         } else {
-          cout << "Sorry, no copies available!" << endl;
+          borrowed_5 = true;
+          copies_5--;
+          cout << "You have successfully borrowed \"" << book_5 << "\"."
+               << endl;
         }
       } else {
-        cout << "Invalid choice!" << endl;
+        cout << "Invalid input." << endl;
       }
-      // If the user chooses to return a book, display the list of borrowed
-    } else if (choice == 2) {
-      cout << "Which book would you like to return?" << endl;
-      // showing only those books which user has borrowed from library .
-      if (borrowed1) {
-        cout << "1. " << book_one << endl;
-      }
-      if (borrowed2) {
-        cout << "2. " << book_two << endl;
-      }
-      if (borrowed3) {
-        cout << "3. " << book_three << endl;
-      }
-      if (borrowed4) {
-        cout << "4. " << book_four << endl;
-      }
-      if (borrowed5) {
-        cout << "5. " << book_five << endl;
-      }
-      cout << "Enter your choice: ";
-      int book_choice;
-      cin >> book_choice;
-      // double checking if user has borrowed the book or not and then returning
-      // the book , updating the copies and borrowed status accordingly.
-      if (book_choice == 1 && borrowed1) {
-        cout << "You have successfully returned " << book_one << endl;
-        copies1++;
-        borrowed1 = false;
-      } else if (book_choice == 2 && borrowed2) {
-        cout << "You have successfully returned " << book_two << endl;
-        copies2++;
-        borrowed2 = false;
-      } else if (book_choice == 3 && borrowed3) {
-        cout << "You have successfully returned " << book_three << endl;
-        copies3++;
-        borrowed3 = false;
-      } else if (book_choice == 4 && borrowed4) {
-        cout << "You have successfully returned " << book_four << endl;
-        copies4++;
-        borrowed4 = false;
-      } else if (book_choice == 5 && borrowed5) {
-        cout << "You have successfully returned " << book_five << endl;
-        copies5++;
-        borrowed5 = false;
-      } else {
-        cout << "Invalid choice!" << endl;
-      }
+
     }
-    // If the user chooses to exit, display a goodbye message and break out of
-    // the loop
-    else if (choice == 3) {
-      cout << "Goodbye!" << endl;
+    // displaying only the borrowed books and asking the user to select a book
+    // to return and updating the copies and borrowed status accordingly
+    else if (option == 2) {
+      cout << "Please select a book to return:" << endl;
+      if (borrowed_1)
+        cout << "1. " << book_1 << endl;
+      if (borrowed_2)
+        cout << "2. " << book_2 << endl;
+      if (borrowed_3)
+        cout << "3. " << book_3 << endl;
+      if (borrowed_4)
+        cout << "4. " << book_4 << endl;
+      if (borrowed_5)
+        cout << "5. " << book_5 << endl;
+
+      int book;
+      cin >> book;
+      // checking if the user has borrowed the book and updating the copies and
+      // borrowed status accordingly
+      if (book == 1 && borrowed_1) {
+        borrowed_1 = false;
+        copies_1++;
+        cout << "You have successfully returned \"" << book_1 << "\"." << endl;
+      } else if (book == 2 && borrowed_2) {
+        borrowed_2 = false;
+        copies_2++;
+        cout << "You have successfully returned \"" << book_2 << "\"." << endl;
+      } else if (book == 3 && borrowed_3) {
+        borrowed_3 = false;
+        copies_3++;
+        cout << "You have successfully returned \"" << book_3 << "\"." << endl;
+      } else if (book == 4 && borrowed_4) {
+        borrowed_4 = false;
+        copies_4++;
+        cout << "You have successfully returned \"" << book_4 << "\"." << endl;
+      } else if (book == 5 && borrowed_5) {
+        borrowed_5 = false;
+        copies_5++;
+        cout << "You have successfully returned \"" << book_5 << "\"." << endl;
+      } else {
+        cout << "You have not borrowed this book or invalid input." << endl;
+      }
+
+    } else if (option == 3) { // Exit the program if the user selects 3
+      cout << "Thank you for using the Library!" << endl;
       break;
     } else {
-      cout << "Invalid choice!" << endl;
+      cout << "Invalid input." << endl;
     }
   }
+
+  return 0;
 }
